@@ -87,6 +87,16 @@ function pow(base, exponent) {
         return base * pow(base, exponent - 1)
     }
 }
+// ELEGANT SOLUTION
+// function pow(base, exponent) {
+    // if (exponent === 0) return 1;
+
+    // if (exponent < 0) {
+    //     return 1 / pow(base, Math.abs(exponent));
+    // } else {
+    //     return base * pow(base, exponent - 1);
+    // }
+// }
 
 
 // A 1-dimensional array is also known as a flattened array.
@@ -122,13 +132,23 @@ function flatten(data) {
     data.forEach(item => {
         if (Array.isArray(item)) {
             flattened.push(...flatten(item))
-            // if it's not an array, we will enter this recursion until there is another flattened array we can push into the main flattened
         } else {
             flattened.push(item)
         }
     })
     return flattened;
 };
+
+// ELEGANT SOLUTION:
+// function flatten(data) {
+//     if (!Array.isArray(data)) return [data];
+
+//     const flat = [];
+//     data.forEach((el) => {
+//         flat.push(...flatten(el));
+//     });
+//     return flat;
+// };
 
 // Write a function, fileFinder(directories, targetFile), that accepts an object representing directories and a string respresenting a filename.
 // The function should return true, if the file is contained anywhere in the given directories.
