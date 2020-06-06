@@ -121,14 +121,12 @@ function flatten(data) {
     let flattened = []
     data.forEach(item => {
         if (Array.isArray(item)) {
-            console.log("into the loop")
             flattened.push(...flatten(item))
             // if it's not an array, we will enter this recursion until there is another flattened array we can push into the main flattened
         } else {
             flattened.push(item)
         }
     })
-    console.log(flattened);
     return flattened;
 };
 
@@ -172,7 +170,13 @@ function flatten(data) {
 // fileFinder(desktop, 'everlong.flac');            // => true
 // fileFinder(desktop, 'sequoia.jpeg');             // => false
 function fileFinder(directories, targetFile) {
+    for (let dir in directories) {
+        if (dir === targetFile || fileFinder(directories[dir], targetFile) === true) {
+            return true;
+        }
+    }
 
+    return false;
 }
 
 
@@ -186,7 +190,18 @@ function fileFinder(directories, targetFile) {
 // pathFinder(desktop, 'everlong.flac'));       // => '/music/genres/rock/everlong.flac'
 // pathFinder(desktop, 'honeybadger.png'));     // => null
 function pathFinder(directories, targetFile) {
+    for (let dir in directories) {
+        if (dir === targetFile) {
+            return '/' + dir;
+        }
 
+        let path = pathFinder(directories[dir], targetFile);
+        if (path !== null) {
+            return dir + path;
+        }
+    }
+
+    return null;
 }
 
 
