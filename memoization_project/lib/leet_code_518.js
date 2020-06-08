@@ -12,7 +12,7 @@ function change(amount, coins, memo = {}) {
 
   let total = 0;
   for (let quantity = 0; quantity <= (amount/coinVal); quantity ++) {
-    total += change(amount - (quantity * coinVal, coins.slice(0, -1)), memo);
+    total += change(amount - (quantity * coinVal), coins.slice(0, -1), memo);
   }
   memo[key] = total;
   return total;
