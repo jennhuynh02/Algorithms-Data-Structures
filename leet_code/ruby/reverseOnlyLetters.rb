@@ -1,18 +1,32 @@
-def reverseOnlyLetters(S)
+def reverseOnlyLetters(s)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
+  indexes = []
+  letters = []
 
   i = 0
-  while i < S.length
-
-    i++
+  while i < s.length
+    if alphabet.include?(s[i].downcase)
+      indexes.push(i)
+      letters.push(s[i])
+    end
+    i += 1
   end
-  
+
+  j = 0
+  while j < s.length
+    if indexes.include?(j)
+      s[j] = letters.pop()
+    end
+    j += 1
+  end
+
+  return s
 end
 
-S = "ab-cd"
-S1 = "a-bC-dEf-ghIj"
-S2 = "Test1ng-Leet=code-Q!"
+s = "ab-cd"
+s1 = "a-bC-dEf-ghIj"
+s2 = "Test1ng-Leet=code-Q!"
 
-puts reverseOnlyLetters(S)
-puts reverseOnlyLetters(S1)
-puts reverseOnlyLetters(S2)
+puts reverseOnlyLetters(s)
+puts reverseOnlyLetters(s1)
+puts reverseOnlyLetters(s2)
