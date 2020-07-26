@@ -20,3 +20,6 @@ end
 puts tribonacci(4)
 puts tribonacci(25)
 puts tribonacci(1)
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
