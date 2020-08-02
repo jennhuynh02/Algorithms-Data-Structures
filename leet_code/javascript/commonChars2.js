@@ -17,12 +17,35 @@ function commonChars (A) {
   return common; // O(1)
 }
 
+// Time Complexity: O(nm^2)
+// Space Complexity: O(m)
+
+function commonChars2 (A) {
+  let res = [...A[0]]; // O(m), space
+  // Saving the first word into an array
+  for (let i = 1; i < A.length; i++) { // O(n)
+    // Iterates through all of the words 
+    res = res.filter(c => {  // O(m)
+      // Filters through each character of the first word
+      const l = A[i].length; // O(1)
+      // Saves the length of the current word
+      A[i] = A[i].replace(c, ""); // O(m)
+      // Replaces character matching first word with empty string to save space
+      return l > A[i].length; // O(1)
+      // Compares new length of word to its original size, if there are changes, this will return true and filter will keep this character in res later to be returned
+    });
+  }
+  return res;  // O(1)
+}
+
 let A = ["bella", "label", "roller"];
 let A1 = ["cool", "lock", "cook"];
 
-console.log(commonChars(A))
-console.log(commonChars(A1))
+// console.log(commonChars(A))
+// console.log(commonChars(A1))
 
-// Time Complexity: O(nm^2)
-// Space Complexity: O(m)
+console.log(commonChars2(A))
+// console.log(commonChars2(A1))
+
+
 
