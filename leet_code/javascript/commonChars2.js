@@ -8,9 +8,9 @@ function commonChars (A) {
     if (A.every(word => word.includes(char))) { // O(nm)
       // Iterates through every word to check if every one of them includes that character of the first word
       A.map(word => word.replace(char, '')) // O(nm)
-      // Iterates through every word to replace a character in each word
+      // Iterates through every word to replace the common character that is indeed present in each word
       common.push(char);  // O(1), space
-      // Pushes this common character into common array to be return as common chars result
+      // Pushes this common character into the common array to be returned as common chars result
     }
   });
 
