@@ -1,29 +1,46 @@
 def reverseOnlyLetters(S):
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
-  indexes = []
-  letters = []
+  alphabet = "abcdefghijklmnopqrstuvwxyz"  # O(1), space
+  indexes = {}  # O(1), space
+  letters = []  # O(1), space
 
-  unsorted = list(S)
+  unsorted = list(S)  # O(n)
 
-  i = 0
-  while i < len(unsorted):
-    if unsorted[i].lower() in alphabet:
-      indexes.append(i)
-      letters.append(unsorted[i])
+  i = 0  # O(1) 
+  while i < len(unsorted):   # O(n)
+    if unsorted[i].lower() in alphabet:  # O(1)
+      indexes.append(i)   # O(1), space
+      letters.append(unsorted[i])   # O(1), space
     i += 1
 
-  j = 0
-  while j < len(unsorted):
-    if j in indexes:
-      unsorted[j] = letters.pop()
-    j += 1
+  j = 0   # O(1)
+  while j < len(unsorted):   # O(n)
+    if j in indexes:   # O(n)
+      unsorted[j] = letters.pop()  # O(1)
+    j += 1  # O(1)
 
-  return ''.join(unsorted)
+  return ''.join(unsorted)  # O(n)
+
+# Time Complexity: O(n^2)
+# Space Complexity: O(n)
+
+
+# def reverseOnlyLetters2(S):
+#     letters = [c for c in S if c.isalpha()]   # O(n)  
+#     ans = []   # O(1)
+#     for c in S:
+#         if c.isalpha():
+#             ans.append(letters.pop())
+#         else:
+#             ans.append(c)
+    # return "".join(ans)
+
+# Time Complexity: O(n^2)
+# Space Complexity: O(n)
 
 s = "ab-cd"
 s1 = "a-bC-dEf-ghIj"
 s2 = "Test1ng-Leet=code-Q!"
 
-print(reverseOnlyLetters(s))
-print(reverseOnlyLetters(s1))
-print(reverseOnlyLetters(s2))
+print(reverseOnlyLetters2(s))
+print(reverseOnlyLetters2(s1))
+print(reverseOnlyLetters2(s2))
