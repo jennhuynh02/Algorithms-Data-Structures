@@ -34,6 +34,9 @@ function countingElements2(arr) {
   return count; // O(1)
 }
 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 let arr = [1, 1, 3, 3, 5, 5, 7, 7];
 console.log(countingElements2(arr));
 let arr1 = [1, 3, 2, 3, 5, 0];
