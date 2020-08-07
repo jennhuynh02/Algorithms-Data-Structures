@@ -21,4 +21,28 @@ function reverseInt(x) {
 // Space Complexity: O(n)
 
 let int = -123;
-console.log(reverseInt(int))
+// console.log(reverseInt(int))
+
+function reverseInt2(x) {
+  let negative;
+  if (x < 0) {
+    negative = true;
+    x = Math.abs(x);
+  };
+
+  let newNum = [];
+  while (x > 0) {
+    newNum.push(x % 10);
+    x = Math.floor(x/10);
+  };
+
+  if (newNum.join('') > 2147483647) return 0;
+
+  if (negative) {
+    return "-" + newNum.join('');
+  } else {
+    return newNum.join('');
+  };
+};
+
+console.log(reverseInt2(-100));

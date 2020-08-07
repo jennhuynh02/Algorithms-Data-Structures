@@ -11,11 +11,11 @@ function numberOfBoomerangs(points) {
        const dist = // O(1), space
          Math.pow(points[i][0] - points[j][0], 2) +
          Math.pow(points[i][1] - points[j][1], 2);
-      // distance will equal (x1 - x2)^2 + (y1 - y2)^2
+      // distance will equal (x1 - x2)^2 + (y1 - y2)^2 - add distances of x and y to get total distance of two points
       if (memory[dist]) count += memory[dist] * 2;  // O(1)
-      // if this distance exists in the memory, we will increment the count by the previous amounts of points with matching distances by 2 (because ordering of second and third point can vary two different ways)
+      // if this distance exists in the memory, we will increment the count by the previous amounts of points with matching distances by 2 (because ordering of second and third point can vary two different ways) to account for all possible combinations with this extra matching point
       memory[dist] ? (memory[dist] += 1) : (memory[dist] = 1);  // O(1)
-      // if this distance exists, we will increment the memory of that distance by one to account for the addition of another possible combination
+      // if this distance exists, we will increment the memory of that distance by one to account for the addition of another possible combination, else, establish the existence of this particular distance and assign it to one
      }
    }
 
