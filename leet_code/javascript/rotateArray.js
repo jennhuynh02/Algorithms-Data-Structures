@@ -1,3 +1,4 @@
+// Solution 1:
 function rotate(nums, k) {
   if (nums.length < k) k = k % nums.length;
 
@@ -12,6 +13,9 @@ function rotate(nums, k) {
 
   return nums;
 }
+
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
 
 // let nums = [-1, -100, 3, 99];
 // let k = 2;
