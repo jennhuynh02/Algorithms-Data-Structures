@@ -22,6 +22,16 @@ let countNegatives2 = grid =>
     .length)  // O(1) grabs the length of each row
     .reduce((a, b) => a + b);   // O(m) reduces all row lengths to sum
 
+/*
+Time Complexity:  O(m*n)
+Space Complexity:  O(1)
+*/
+
+const countNegatives3 = grid => {
+  let count = 0;  // O(1)
+  grid.forEach(row => count += row.filter(int => int < 0).length);  // O(m * n) iterates over each row, adding the length of it after filtering for only negatives
+  return count;  // O(1)
+}
 
 /*
 Time Complexity:  O(m*n)
@@ -31,3 +41,4 @@ Space Complexity:  O(1)
 let grid = [[4, 3, 2, -1], [3, 2, 1, -1], [1, 1, -1, -2], [-1, -1, -2, -3]];
 console.log(countNegatives(grid));
 console.log(countNegatives2(grid));
+console.log(countNegatives3(grid));
