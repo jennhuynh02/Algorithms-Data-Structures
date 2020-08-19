@@ -82,6 +82,12 @@ const dayOfTheWeek4 = (day, month, year) => {
   return WEEKDAYS[days % 7];
 }
 
+/*
+Constant time and space because size of input does not change run time/memory consumption.
+Time Complexity:  O(1)
+Space Complexity:  O(1)
+*/
+
 let day = 31;
 let month = 8;
 let year = 2019;
