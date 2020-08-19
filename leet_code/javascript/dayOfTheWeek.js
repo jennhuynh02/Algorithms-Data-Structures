@@ -3,7 +3,6 @@ const dayOfTheWeek1 = (day, month, year) => {
   const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];  // O(1), space
   return weekDay[new Date(year, month - 1, day).getDay()];  // O(1)
 }
-
 /*
 Uses Date constructor - creates date and gets days of the week.
 Time Complexity:  O(1)
@@ -20,7 +19,7 @@ Time Complexity:  O(1)
 Space Complexity:  O(1)
 */
 
-// need to solve it without using the javascript Date class
+// Need to solve it without using the javascript Date class
 // JS months start at 0
 
 // Solution 3:
@@ -74,7 +73,14 @@ const daysInYear = year => isLeapYear(year) ? 366 : 365
 const isLeapYear = year => year % 4 === 0 && year % 100 !== 0 || year % 400 === 0
 
 // Solution 4:
-const dayOfTheWeek4 = day, month, year => 
+const dayOfTheWeek4 = (day, month, year) => {
+  const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const DAYS_IN_MONTH = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  
+  let days = (year - 1) * 365 + day + Math.floor((month > 2 ? year : year - 1) / 4) - Math.floor(year/100) + Math.floor(year/400);
+  for (let i = 0; i < month; i++) days += DAYS_IN_MONTH[i];
+  return WEEKDAYS[days % 7];
+}
 
 let day = 31;
 let month = 8;
@@ -83,3 +89,4 @@ let year = 2019;
 console.log(dayOfTheWeek1(day, month, year));
 console.log(dayOfTheWeek2(day, month, year));
 console.log(dayOfTheWeek3(day, month, year));
+console.log(dayOfTheWeek4(day, month, year));
