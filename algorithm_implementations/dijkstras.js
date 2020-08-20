@@ -50,3 +50,8 @@ let { distance, previous } = dijkstras(graph, 'a');
 // output
 console.log(distance);
 console.log(previous);
+
+/*
+Time Complexity:  O(n^2)
+Space Complexity:  O(n^2)
+*/
