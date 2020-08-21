@@ -37,7 +37,7 @@ const addStrings2 = (num1, num2) => {
   let result = "", add = 0, sum;
   let i = num1.length - 1, j = num2.length - 1;
   while (i >= 0 || j >= 0) {
-    sum = (num1[i--] | 0) + (num2[j--] | 0) + add;
+    sum = (num1[i--] | 0) + (num2[j--] | 0) + add;  // XOR operation converts string to integer
     result = sum % 10 + result;
     add = sum > 9 ? 1 : 0;
   }
