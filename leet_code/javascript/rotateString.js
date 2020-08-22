@@ -1,3 +1,4 @@
+//  Problem 796
 const rotateString = (A, B) => {
 
   if (A === B) return true;  // O(1)
