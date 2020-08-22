@@ -51,4 +51,4 @@ const addStrings2 = (num1, num2) => {
 let num1 = "9";
 let num2 = "99";
 
-console.log(addStrings2(num1, num2));
+console.log(addStrings2(num1, num2)); 
