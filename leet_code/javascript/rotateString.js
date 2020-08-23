@@ -1,5 +1,5 @@
 //  Problem 796
-const rotateString = (A, B) => {
+const rotateString1 = (A, B) => {
 
   if (A === B) return true;  // O(1)
 
@@ -17,10 +17,25 @@ const rotateString = (A, B) => {
 }
 
 /*
+Solution 1:
 Time Complexity:  O(n)
 Space Complexity:  O(n)
 */
 
-let A = "";
-let B = "";
-console.log(rotateString(A,B));
+const rotateString2 = (A, B) => {
+  if (A.length != B.length) return false;  // O(1)
+
+  A += A;  // O(1), O(n) space
+
+  return A.includes(B);  // O(n)
+}
+
+/*
+Solution 2:
+Time Complexity:  O(n)
+Space Complexity:  O(n)
+*/
+
+let A = "abcde";
+let B = "cdeab";
+console.log(rotateString2(A,B));
