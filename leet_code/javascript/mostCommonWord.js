@@ -41,7 +41,7 @@ const mostCommonWord2 = (paragraph, banned) => {
     }
   }
 
-  return Object.keys(count).reduce((max, val) => count[val] > count[max] ? val : max)  // O(n), space
+  return Object.keys(count).reduce((a, b) => count[a] > count[b] ? a : b)  // O(n), space
 };
 
 /*
