@@ -1,7 +1,6 @@
 //  Problem 819
-const mostCommonWord= (paragraph, banned) => {
+const mostCommonWord1 = (paragraph, banned) => {
   const BANNED = new Set(banned);  // O(m), space
-  
   const words = paragraph.split(/[\.," "!?;.']+/);  // O(n), space
   const count = {};  // O(1), space
 
@@ -29,10 +28,34 @@ const mostCommonWord= (paragraph, banned) => {
 Solution 1:
 Time Complexity:  O(n+m)
 Space Complexity:  O(n+m)
-
-Concatenates A to itself, which should include all left shift patterns, and then checks if it includes B.
 */
 
-let paragraph = "Bob. hIt, baLl";
-let banned = ["bob", "hit"];
-console.log(mostCommonWord(paragraph, banned));
+const mostCommonWord2 = (paragraph, banned) => {
+  const BANNED = new Set(banned);  // O(m), space
+  const words = paragraph.toLowerCase().split(/\W+/);  // O(n), space
+  const count = {};  // O(1), space
+
+  for (const word of words) {  // O(n)
+    if (!BANNED.has(word)) {  // O(1)
+      count[word] ? count[word] = count[word] += 1 : count[word] = 1;  // O(1), space
+    }
+  }
+
+  return Object.keys(count).reduce((max, val) => count[val] > count[max] ? val : max)  // O(n), space
+};
+
+/*
+Solution 2:
+Same strategy, just cleaning up unnecessary lines of code.
+Time Complexity:  O(n+m)
+Space Complexity:  O(n+m)
+*/
+
+const mostCommonWord3 = (paragraph, banned) => {
+
+};
+
+let paragraph =
+  "Bob hit a ball, the hit BALL flew far after it was hit.";
+let banned = ["hit"];
+console.log(mostCommonWord2(paragraph, banned));
