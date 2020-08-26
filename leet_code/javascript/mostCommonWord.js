@@ -35,13 +35,15 @@ const mostCommonWord2 = (paragraph, banned) => {
   const words = paragraph.toLowerCase().split(/\W+/);  // O(n), space
   const count = {};  // O(1), space
 
+
   for (const word of words) {  // O(n)
     if (!BANNED.has(word)) {  // O(1)
       count[word] ? count[word] = count[word] += 1 : count[word] = 1;  // O(1), space
     }
   }
 
-  return Object.keys(count).reduce((a, b) => count[a] > count[b] ? a : b)  // O(n), space
+  //The order of this comparison does matter because there are empty string keys from the paragraph split into words that might occur.
+  return Object.keys(count).reduce((max, val) => count[val] > count[max] ? val : max)  // O(n), space
 };
 
 /*
@@ -56,6 +58,6 @@ const mostCommonWord3 = (paragraph, banned) => {
 };
 
 let paragraph =
-  "Bob hit a ball, the hit BALL flew far after it was hit.";
-let banned = ["hit"];
+  "a.";
+let banned = [];
 console.log(mostCommonWord2(paragraph, banned));
