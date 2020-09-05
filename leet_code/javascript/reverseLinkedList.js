@@ -23,3 +23,10 @@ const reverseLinkedList2 = head => {
   return helper(head, null);
 };
 
+/*
+Main idea:
+1.  Initialize previous of head to null
+2.  Save the next node to a value called next
+3.  Set the current node's next to the previous node
+4.  Set the head to the next node, and repeats steps 2-4 until next head === null
+*/
