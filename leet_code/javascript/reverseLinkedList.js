@@ -3,14 +3,20 @@
 // Iterative
 const reverseLinkedList = head => {
   let previous = null;
+  let next = null;
   while (head) {
-    const next = head.next;
+    next = head.next;
     head.next = previous;
     previous = head;
     head = next;
   };
   return previous;
 };
+/*
+Solution 1:
+Time Complexity:  O(n)
+Space Complexity:  O(1)
+*/
 
 // Recursive
 const reverseLinkedList2 = head => {
@@ -22,6 +28,13 @@ const reverseLinkedList2 = head => {
   };
   return helper(head, null);
 };
+
+/*
+Solution 2:
+Time Complexity:  O(n)
+Space Complexity:  O(n)
+*/
+
 
 /*
 Main idea:
