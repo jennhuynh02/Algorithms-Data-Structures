@@ -19,8 +19,7 @@ const reverseLinkedList2 = head => {
     let next = current.next;
     current.next = prev;
     return helper(next, current);
-  }
-
+  };
   return helper(head, null);
 };
 
