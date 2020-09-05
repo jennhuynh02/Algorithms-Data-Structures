@@ -6,6 +6,7 @@ const maxProduct = (nums) => {
 
 /*
 Solution 1:
+Sorts nums array in descending order and then multiplies the two greatest values at the beginning of the array.
 Time Complexity:  O(n)
 Space Complexity:  O(n)
 */
@@ -23,11 +24,12 @@ const maxProduct2 = (nums) => {
 
 /*
 Solution 2:
+Traverses over all values of nums to find the two maximum numbers.  If the next value is greater than max1 or max2, it will first assign max2 the minimum between max1 and val, and then max2 the maximum between max1 and val to ensure that second maximum number does not get dropped in the process of reassigning max1.
 Time Complexity:  O(n)
 Space Complexity:  O(1)
 */
 
-const maxProduct3 = nums => {
+const maxProduct3 = (nums) => {
   let max = 0;
   for (let i = 0, j = nums.length - 1; i < j;) {
     max = Math.max(max, (nums[i] - 1) * (nums[j] - 1));
