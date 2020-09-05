@@ -28,8 +28,20 @@ Space Complexity:  O(1)
 */
 
 const maxProduct3 = nums => {
-  l
+  let max = 0;
+  for (let i = 0, j = nums.length - 1; i < j;) {
+    max = Math.max(max, (nums[i] - 1) * (nums[j] - 1));
+    nums[i] < nums[j] ? i++ : --j;
+  }
+  return max;
 }
 
+/*
+Solution 3:
+Traverses nums array from both ends, it moves on the side that is less than the max so that the max on either side is forsure being multiplied with other elements on the opposite side, and stores the value of the product in the max variable.
+Time Complexity:  O(n)
+Space Complexity:  O(1)
+*/
+
 let nums = [3, 4, 5, 2];
-console.log(maxProduct2(nums))
+console.log(maxProduct3(nums))
