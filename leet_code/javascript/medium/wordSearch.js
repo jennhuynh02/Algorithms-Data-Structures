@@ -47,6 +47,12 @@ const wordSearch = (board, word) => {
   return false;
 };
 
+/*
+Solution 1:
+Time Complexity: O(mn * 4^l) - n is the height of the board, and m is the width of the longest width - iterating through each element of the nested array and comparing it with the length of the word in all four directions
+Space Complexity: O(mn + l) - space for each coordinate of the board plus each letter of the word that's being passed into the recursive stack frames
+*/
+
 let board = [
   ['A', 'B', 'C', 'E'],
   ['S', 'F', 'C', 'S'],
