@@ -1,6 +1,6 @@
 // Problem 15:  3Sum
 
-// Approach 1:  Sort array, start at first index, add to the left and right of the remaining array, increment whichever side that would most likely result in a 0 sum
+// Approach 1:  Sort array, start at first index, add the most left and most right side of the remaining array, increment whichever side that would most likely result in a sum of 0.
 
 const threeSum = nums => {
   nums.sort((a, b) => a - b);
