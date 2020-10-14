@@ -38,7 +38,10 @@ const threeSum = nums => {
 };
 
 let nums = [-1, 0, 1, 2, -1, -4];
+let nums1 = [-1, 0, 0, 1, -1, 1];
+// There are two triplets with same values that could equal to 0, but we want unique triplets.
 console.log(threeSum(nums));
+console.log(threeSum(nums1));
 
 /*
 Solution 1:
