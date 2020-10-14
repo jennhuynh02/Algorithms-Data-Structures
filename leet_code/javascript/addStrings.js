@@ -19,7 +19,7 @@ const addStrings1 = (num1, num2) => {
   for (let i = num1.length - 1; i >= 0; i--) {
     
     let sum = (parseInt(num1[i]) + parseInt(num2[i]) + addUp).toString();
-    console.log(sum)
+
     if (i === 0) {
       newStr = sum + newStr 
     } else {
