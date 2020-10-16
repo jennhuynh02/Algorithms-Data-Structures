@@ -1,5 +1,7 @@
 // Problem 102 Binary Tree Level Order Traversal
 
+// Approach 1
+
 const levelOrder = root => {
   if (!root) return [];
   const result = [[root.val]];
@@ -29,6 +31,9 @@ const levelOrder = root => {
 
   return result;
 }
+
+// Approach 2
+
 
 class TreeNode {
   constructor(val) {
