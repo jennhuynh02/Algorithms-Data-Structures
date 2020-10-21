@@ -1,6 +1,6 @@
 // Problem 79:  Word Search
 
-const wordSearch = (board, word) => {
+const wordSearch1 = (board, word) => {
   if (board.length === 0) return false;
 
   const height = board.length;
@@ -51,6 +51,47 @@ const wordSearch = (board, word) => {
 Solution 1:
 Time Complexity: O(mn * 4^l) - n is the height of the board, and m is the width of the longest width - iterating through each element of the nested array and comparing it with the length of the word in all four directions
 Space Complexity: O(mn + l) - space for each coordinate of the board plus each letter of the word that's being passed into the recursive stack frames
+*/
+
+// Approach 2 without commented notes
+const wordSearch = (board, word) => {
+  const height = board.length;
+  const width = board[0].length;
+  const dirs = [[-1,0], [0,1], [1,0], [0,-1]];
+
+  const run = (x, y, idx) => {
+    if (board[x][y] !== word[idx]) return false;
+    if (idx === word.length - 1) return true;
+    
+    board[x][y] = "*";
+
+    for (const [xDir, yDir] of dirs) {
+      const newX = x + xDir;
+      const newY = y + yDir;
+
+      if (newX >= 0 && newX < height && newY >= 0 && newY < width) {
+        if (run(newX, newY, idx + 1)) return true;
+      }
+    }
+
+    board[x][y] = word[idx];
+
+    return false;
+  }
+
+  for (let x = 0; x < height; x++) {
+    for (let y = 0; y < width; y++) {
+      if (run(x, y, 0)) return true;
+    }
+  }
+
+  return false;
+}
+
+/*
+Solution 2:
+Time Complexity: O(N(3L)) - N stands for the number of cell, 3 is the number of directions that the recursionw would branch out to and L represents the length of the target word that the recursion is trying to find the end of, we say 3 because the recursion will not branch off towards the direction is has already visited
+Space Complexity: O(L) - main consumption of memory comes from the recursive call stack, which would have a maximum length of the word that it is trying to find
 */
 
 let board = [

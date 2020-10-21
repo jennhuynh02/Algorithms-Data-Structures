@@ -25,7 +25,7 @@ const wordBreak1 = (s, wordDict) => {
 /*
 Solution 1:
 Time Complexity: O(n^3 + k)
-Space Complexity: O(n^2 + k)
+Space Complexity: O(n^3 + k)
 */
 
 // Approach 2
@@ -35,9 +35,9 @@ const wordBreak = (s, wordDict) => {
   const check = Array(s.length + 1).fill(false);
   check[0] = true;
 
-  for (let end = 1; end <= s.length; end++) {
-    for (let start = 0; start < end; start++) {
-      const word = s.slice(start, end);
+  for (let end = 1; end <= s.length; end++) {  // O(n)
+    for (let start = 0; start < end; start++) {  // O(n)
+      const word = s.slice(start, end);  // O(n)
       if (check[start] === true && dictionary.has(word)) {
         check[end] = true;
         break;
