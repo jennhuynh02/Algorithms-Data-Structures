@@ -16,7 +16,7 @@ const wordBreak1 = (s, wordDict) => {
           queue.push(end);  // O(1), space
         }
       }
-      visited.add(start); // O(a), space
+      visited.add(start); // O(1), space
     }
   }
   return false;  // O(1)

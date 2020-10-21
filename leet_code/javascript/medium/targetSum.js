@@ -18,7 +18,7 @@ const targetSum = (nums, S) => {
 
 /*
 Solution 1:
-Time Complexity: O(2^n) - Calling recursion twice within itself
+Time Complexity: O(2^n) - Calling recursion twice within itself, n maps to either a positive or negative integer
 Space Complexity: O(n) - at most n stack frames to reach the base case of each recursive path
 */
 
