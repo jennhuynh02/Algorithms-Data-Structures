@@ -18,8 +18,8 @@ const coinChange = (coins, amount) => {
 
 /*
 Solution 1:
-Time Complexity: O(nk) - each amount is checked for its possible arrangment with every type of coin
-Space Complexity: O(k) - dynamic programming array size is relevant to the amount input
+Time Complexity: O(nk) - each amount is checked for its possible arrangment with every type of coin k
+Space Complexity: O(n) - dynamic programming array size is relevant to the amount input
 */
 
 let coins = [1,2,5];

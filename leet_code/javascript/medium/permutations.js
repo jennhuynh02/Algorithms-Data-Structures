@@ -26,5 +26,5 @@ console.log(permutations(nums));
 /*
 Solution 1:
 Time Complexity: O(n!)
-Space Complexity: O(3^n + 4^m)
+Space Complexity: O(n!)
 */
