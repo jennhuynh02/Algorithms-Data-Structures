@@ -25,6 +25,6 @@ console.log(permutations(nums));
 
 /*
 Solution 1:
-Time Complexity: O(n!)
-Space Complexity: O(n!)
+Time Complexity: O(n * n!)
+Space Complexity: O(n * n!)
 */
