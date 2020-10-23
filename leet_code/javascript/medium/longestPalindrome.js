@@ -38,21 +38,21 @@ Space Complexity: O(n^2) -
 */
 
 // Approach 2
-const longestPal = s => {
+const longestPal2 = s => {
   let longest = "";
 
   const check = (left, right) => {
-    while (left >= 0 && s[left] === s[right]) {
+    while (left >= 0 && s[left] === s[right]) {  // O(n)
       left--;
       right++;
     }
     left++;
     right--;
 
-    if (longest.length < right-left+1) longest = s.slice(left, right+1);
+    if (longest.length < right-left+1) longest = s.slice(left, right+1);  // O(n), + space
   }
 
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {  // O(n)
     check(i,i);
     check(i,i + 1);
   }
@@ -63,9 +63,37 @@ const longestPal = s => {
 /*
 Solution 2:
 Time Complexity: O(n^3) -
-Space Complexity: O(n) -
+Space Complexity: O(n^2) -
 */
 
+// Approach 3 - remove the slice inside the check function, and store numbers (start,end) instead of every longest encounter of palindrome substring
+const longestPal = s => {
+  let [start, end] = [0, 0];
+
+  const check = (left, right) => {
+    while (left >= 0 && s[left] === s[right]) {  // O(n)
+      left--;
+      right++;
+    }
+    left++;
+    right--;
+
+    if (end - start + 1 < right - left + 1) [start, end] = [left, right];
+  }
+
+  for (let i = 0; i < s.length; i++) {  // O(n)
+    check(i, i);
+    check(i, i + 1);
+  }
+
+  return s.slice(start, end + 1);  
+}
+
+/*
+Solution 3:
+Time Complexity: O(n^2) -
+Space Complexity: O(n) -
+*/
 
 let s = "babad";
 console.log(longestPal(s));
