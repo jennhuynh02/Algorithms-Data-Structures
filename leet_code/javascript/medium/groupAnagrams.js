@@ -18,6 +18,6 @@ console.log(groupAnagrams(strs));
 
 /*
 Solution 1:
-Time Complexity: O(nKlog(K)) - sort is nlogn
+Time Complexity: O(nKlog(K)) - sort is klogk
 Space Complexity: O(n)
 */

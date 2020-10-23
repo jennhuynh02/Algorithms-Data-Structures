@@ -20,5 +20,5 @@ console.log(findDuplicateNum(nums1));
 /*
 Solution 1:
 Time Complexity: O(n)
-Space Complexity: O(1)
+Space Complexity: O(1) - modifies the input array in place, so no extra space is needed
 */
