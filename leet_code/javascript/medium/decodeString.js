@@ -55,3 +55,9 @@ const decodeString = s => {
 
 let s1 = "3[a]2[b4[F]c]";  // => "aaabFFFFcbFFFFc"
 console.log(decodeString(s1));
+
+/*
+Solution 1:
+Time Complexity: O(k * n) - highest number of repeats * number of chars in a repeated string
+Space Complexity: O(k * n) - size of decoded string
+*/
