@@ -5,8 +5,8 @@ const maxProductSub = nums => {
   let max = nums[0], left = 0, right = 0;
 
   for (let i = 0; i < nums.length; i++) {
-    left = (!left ? 1 : left) * nums[i];
-    right = (!right ? 1 : right) * nums[nums.length - 1 - i];
+    left = (!left ? 1 : left) * nums[i];  // left pointer, if not less than or equal to 0, will multiply itself by the current number; else left will be 1 multiplied by current number
+    right = (!right ? 1 : right) * nums[nums.length - 1 - i];  // if right is greater than 0, it will be multiplied by the current number; else it will become the current number
     max = Math.max(max, right, left);
   }
   return max;
