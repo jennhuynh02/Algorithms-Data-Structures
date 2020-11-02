@@ -20,6 +20,6 @@ console.log(maxProductSub(nums2));
 
 /*
 Solution 1:
-Time Complexity: O(n)
-Space Complexity: O(n)
+Time Complexity: O(n) - one pass
+Space Complexity: O(1)
 */
