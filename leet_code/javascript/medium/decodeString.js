@@ -1,4 +1,4 @@
-// Problem  394
+// Problem  394 Decode String
 
 // Approach 1 Stack Apporach
 
