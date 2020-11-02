@@ -1,5 +1,6 @@
 // Problem 152 Maximum Product Subarray
 
+// Approach 1
 const maxProductSub = nums => {
   let max = nums[0], left = 0, right = 0;
 
