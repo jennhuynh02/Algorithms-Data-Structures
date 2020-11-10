@@ -17,5 +17,5 @@ console.log(jumpGame(nums));
 /*
 Solution 1:
 Time Complexity: O(n)
-Space Complexity: O(1)
+Space Complexity: O(n)
 */
