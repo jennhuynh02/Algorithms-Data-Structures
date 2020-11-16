@@ -1,6 +1,6 @@
 // Problem 22 Generate Parentheses
 
-// Approach 1
+// Approach 1 Backtracking
 const generateParentheses = n => {
   const result = [];
 
