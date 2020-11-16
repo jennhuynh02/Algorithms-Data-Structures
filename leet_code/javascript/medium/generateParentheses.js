@@ -4,19 +4,19 @@
 const generateParentheses = n => {
   const result = [];
 
-  const go = (str, close, open) => {
+  const go = (str, open, close) => {
     if (str.length === n * 2) result.push(str);
-    if (open > 0) go(str + '(', close + 1, open - 1);
-    if (close > 0) go(str + ')', close - 1, open);
+    if (open > 0) go(str + '(', open - 1, close + 1);
+    if (close > 0) go(str + ')', open, close - 1);
   }
 
-  go("", 0, n);
+  go("", n, 0);
   return result;
 }
 
 /*
 Solution 1:
-Time Complexity: O(2^n)
+Time Complexity: O(4^n / n√n)
 Space Complexity: O(2^n)
 */
 
