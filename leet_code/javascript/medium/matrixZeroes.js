@@ -1,3 +1,5 @@
+// Problem 73 Set Matrix Zeros
+
 // Approach 1
 
 const setMatrixZeroes1 = matrix => {
@@ -61,7 +63,7 @@ const setMatrixZeroes = matrix => {
 }
 
 /*
-Solution 1:
+Solution 2:
 Time Complexity: O(m * n) - iterates through each element to check for 0's first
 Space Complexity: O(m) - set containing column indices that will need to be converted to 0's
 */
