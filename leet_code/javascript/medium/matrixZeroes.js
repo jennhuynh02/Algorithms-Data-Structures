@@ -119,5 +119,11 @@ const setMatrixZeroes = matrix => {
   return matrix;
 }
 
+/*
+Solution 3:
+Time Complexity: O(m * n) - iterates through each element to check for 0's
+Space Complexity: O(1) - changing elements in place
+*/
+
 let matrix = [[-4, -2147483648, 6, -7, 0], [-8, 6, -8, -6, 0], [2147483647, 2, -9, -6, -10]]
 console.log(setMatrixZeroes(matrix));
