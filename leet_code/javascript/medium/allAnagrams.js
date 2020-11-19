@@ -78,6 +78,7 @@ const allAnagramsAnnotated = (s, p) => {
   if (p.length > s.length) return [];
 
   //  Initialize a hashmap called map, this will log the existence of characters as we iterate through them
+  
   //  Initialize an array called answer, this will contain all indexes at which the anagram can start 
   const map = new Map(), answer = [];
 
@@ -130,7 +131,13 @@ const allAnagramsAnnotated = (s, p) => {
   return answer;
 };
 
-let s = "abab";
-let p = "ab";
+let s = "cbaebabacd";
+let p = "abc";
 
 console.log(allAnagrams(s, p));
+
+/*
+Solution 1:
+Time Complexity: O(n)
+Space Complexity: O(n)
+*/
