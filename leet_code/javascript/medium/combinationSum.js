@@ -6,9 +6,9 @@ const combinationSum = (candidates, target) => {
   const result = [];
 
   function search(index, combo, remaining) {
-    if (remaining === 0) result.push(combo.slice());
+    if (remaining === 0) return result.push(combo.slice());
+    if (remaining < 0) return;
     if (index === candidates.length) return;
-    if (remaining <= 0) return;
 
     combo.push(candidates[index]);
     console.log("push", combo, index)
