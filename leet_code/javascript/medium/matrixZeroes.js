@@ -76,15 +76,12 @@ const setMatrixZeroes = matrix => {
   let fillStartCol = false;
   let fillStartRow = false;
 
-  for (let j = 0; j < width; j++) {
-    if (matrix[0][j] === 0) {
-      fillStartRow = true;
-    }
-  }
+  if (matrix[0].includes(0)) fillStartRow = true;
 
   for (let j = 0; j < height; j++) {
     if (matrix[j][0] === 0) {
       fillStartCol = true;
+      break;
     }
   }
 

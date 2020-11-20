@@ -137,7 +137,7 @@ let p = "abc";
 console.log(allAnagrams(s, p));
 
 /*
-Solution 1:
+Solution 2:
 Time Complexity: O(n)
 Space Complexity: O(n)
 */

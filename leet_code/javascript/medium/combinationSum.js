@@ -26,8 +26,8 @@ const combinationSum = (candidates, target) => {
 
 /*
 Solution 1:
-Time Complexity: O(2^n)
-Space Complexity: O(2^n)
+Time Complexity: O(n^target) - at each point, we can split ways into candidates.length subtrees, but only traverse while sum is < target
+Space Complexity: O(target) - how many n fits into the target
 */
 
 let candidates = [2, 3, 6, 7];
