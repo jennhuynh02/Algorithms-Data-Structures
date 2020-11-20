@@ -1,20 +1,43 @@
 // Problem 384 Shuffle An Array
 
 // Approach 1
-
-const shuffleArray = nums => {
-
-}
-
-const Solution = function(nums) {
+/**
+ * @param {number[]} nums
+ */
+var Solution = function (nums) {
   this.nums = nums;
+};
 
-  this.first = () => {
-    return nums[0];
+/**
+ * Resets the array to its original configuration and return it.
+ * @return {number[]}
+ */
+Solution.prototype.reset = function () {
+  return this.nums;
+};
+
+/**
+ * Returns a random shuffling of the array.
+ * @return {number[]}
+ */
+Solution.prototype.shuffle = function () {
+  const unshuffled = this.nums.slice()
+  const shuffled = [];
+
+  while (unshuffled.length) {
+    const random = Math.floor(Math.random() * unshuffled.length);
+    [unshuffled[random], unshuffled[unshuffled.length - 1]] = [unshuffled[unshuffled.length - 1], unshuffled[random]]
+    shuffled.push(unshuffled.pop());
   }
-}
 
-let a = new Solution([0,1,2]);
-let b = new Solution(11);
-console.log(a,b)
-console.log(a.first,b.first)
+  return shuffled;
+};
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ */
+let nums = [1, 3, 2];
+var obj = new Solution(nums)
+var param_1 = obj.reset()
+var param_2 = obj.shuffle()
+console.log(obj.shuffle())
