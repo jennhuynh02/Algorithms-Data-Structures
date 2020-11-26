@@ -53,21 +53,13 @@ const allAnagrams = (s, p) => {
   for (let i = 0; i < s.length; i++) {
     c1 = i < p.length ? p[i] : s[i - p.length];
     c2 = s[i];
-    console.log("p:  ", p)
-    console.log("s:  ", s)
-    console.log("index", i)
-    console.log("c1:  ", c1)
-    console.log("c2:  ", c2)
     if (c1 !== c2) {
-      console.log(map)
       if (map.get(c1) === -1) map.delete(c1);
       else map.set(c1, map.has(c1) ? map.get(c1) + 1 : 1);
       if (map.get(c2) === 1) map.delete(c2);
       else map.set(c2, map.has(c2) ? map.get(c2) - 1 : -1);
-      console.log(map)
     };
     if (map.size === 0 && i >= p.length - 1) answer.push(i - p.length + 1);
-    console.log(answer)
   };
   return answer;
 };
