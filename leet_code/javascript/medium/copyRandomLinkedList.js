@@ -24,7 +24,7 @@ const copyRandomLinkedList = (head) => {
     This call should return: 
     - null if pointer does not point to a node,
     - a copy of the pointed node if it has been already been visited and created,
-    - otherwise, would create a new node and then any nodes it points to
+    - otherwise, would create a new node and then any nodes it points to, and return that new node that was just created.
     */
     newNode.next = copyList(node.next);
     newNode.random = copyList(node.random);
