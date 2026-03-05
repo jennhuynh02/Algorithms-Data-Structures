@@ -12,4 +12,5 @@ Personal study repo covering core DSA concepts with implementations and LeetCode
 JavaScript/Typescript · Python
 
 ## Study Resources:
-[https://www.youtube.com/watch?v=Z_c4byLrNBU](https://www.youtube.com/watch?v=Z_c4byLrNBU)
+[Data Structure and Algorithm Patterns for LeetCode Interviews – Tutorial
+ FreeCodeCamp](https://www.youtube.com/watch?v=Z_c4byLrNBU)
